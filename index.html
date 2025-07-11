@@ -63,6 +63,10 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
+        /* カスタムテキストシャドウ */
+        .text-shadow {
+            text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 1.5px 4px rgba(0,0,0,0.18);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -85,23 +89,25 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                新規事業の成功確率を<br>
-                <span class="text-yellow-300">劇的に向上させる</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">
-                経営革新計画策定支援サービス
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#consultation" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-                    <i class="fas fa-comments mr-2"></i>無料相談を申し込む
-                </a>
-                            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="relative h-[500px] flex items-center justify-center text-white" style="min-height:400px;">
+  <img src="https://github.com/patr1111/kakushin/blob/main/32909671_l.jpg?raw=true" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
+  <div class="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-blue-400/40 z-10"></div>
+  <div class="relative z-20 w-full text-center px-4">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">
+  新規事業の成功確率を<br>
+  <span class="text-yellow-300 text-shadow">劇的に向上させる</span>
+</h1>
+<p class="text-xl md:text-2xl mb-8 opacity-90 text-shadow">
+  経営革新計画策定支援サービス
+</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#consultation" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
+        <i class="fas fa-comments mr-2"></i>無料相談を申し込む
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- Problem Section -->
     <section class="py-16 bg-white">

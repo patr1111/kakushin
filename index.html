@@ -146,17 +146,21 @@
                 line-height: 1.2;
                 margin-bottom: 1.5rem;
             }
-            .hero-subtitle {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-            }
-            .hero-button {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.875rem;
-                min-width: 180px;
-            }
+/* Hero Section のレスポンシブ調整 */
+        .hero-section {
+            min-height: 70vh;
         }
         
+        .hero-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+        }
+
+        /* デスクトップ用の背景画像位置調整 */
         @media (min-width: 769px) {
             .hero-section {
                 min-height: 600px;
@@ -178,9 +182,63 @@
                 font-size: 1.125rem;
                 min-width: 220px;
             }
+            .hero-bg {
+                object-position: center right;
+            }
         }
 
-        /* タイトルのフォント調整 */
+        /* スマホ・タブレット用の背景画像位置調整 */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 500px;
+                padding: 2rem 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .hero-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+                min-width: 180px;
+            }
+            
+            .hero-bg {
+                object-position: 70% center; /* 人物がより見えるように調整 */
+                transform: scale(1.1); /* 少し拡大して人物を大きく表示 */
+                transform-origin: 70% center;
+            }
+            
+            /* スマホでのテキストエリアの調整 */
+            .hero-content {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 0.5rem;
+                padding: 1.5rem;
+                backdrop-filter: blur(2px);
+            }
+            
+            .hero-subtitle {
+                background: rgba(255, 255, 255, 0.95) !important;
+            }
+        }
+
+        /* 超小型スマホ用 */
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 450px;
+            }
+            
+            .hero-bg {
+                object-position: 75% center;
+                transform: scale(1.2);
+                transform-origin: 75% center;
+            }
+        }        /* タイトルのフォント調整 */
         h1, h2, h3 {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700;
@@ -253,11 +311,11 @@
 
     <!-- Hero Section -->
     <section class="hero-section relative flex items-center justify-center text-white">
-        <img src="cover_419971563.jpeg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
+        <img src="cover_419971563.jpeg" alt="Hero Background" class="hero-bg absolute inset-0 w-full h-full object-cover z-0">
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-800/40 z-10"></div>
         <div class="relative z-20 w-full px-4 max-w-7xl mx-auto">
-            <div class="w-full md:w-1/2 text-left">
-                <h1 class="hero-title font-bold text-shadow">
+            <div class="hero-content w-full md:w-1/2 text-left">
+                <h1 class="hero-title font-bold text-shadow mb-4">
                     経営革新計画サポートplus
                 </h1>
                 <p class="hero-subtitle opacity-90 text-shadow" style="color: #2c5282; background: rgba(255, 255, 255, 0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: inline-block;">

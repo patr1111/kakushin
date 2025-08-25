@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,22 +7,42 @@
     <meta name="description" content="新規事業の成功確率を上げたい中小企業・個人事業主の皆様へ。国家資格を持つ専門家が経営革新計画の策定から実行まで全面的にサポート。補助金加点効果も期待できます。">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --main-color: #2c5282;
+            --hover-color: #3182ce;
+            --secondary-color: #4a90e2;
+            --accent-color: #63b3ed;
+            --header-bg-color: #ffffff;
+            --light-gray-bg: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border-color: #e2e8f0;
+        }
+
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Noto Sans JP', 'Noto Serif JP', sans-serif;
             line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--light-gray-bg);
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .main-gradient {
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--hover-color) 100%);
         }
+
         .service-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
         }
+        
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(156, 34, 35, 0.15);
         }
+
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -32,56 +51,257 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--main-color);
             color: white;
             font-size: 2rem;
         }
+
         .step-number {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--main-color);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.5rem;
             margin: 0 auto 1rem;
         }
+
         .price-highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--main-color);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .cta-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--main-color);
             transition: all 0.3s ease;
+            border: none;
         }
+        
         .cta-button:hover {
+            background: var(--hover-color);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(156, 34, 35, 0.3);
         }
+
         /* カスタムテキストシャドウ */
         .text-shadow {
             text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 1.5px 4px rgba(0,0,0,0.18);
         }
+
+        /* セクション背景色の調整 */
+        .section-white {
+            background-color: #ffffff;
+        }
+        
+        .section-gray {
+            background-color: var(--light-gray-bg);
+        }
+
+        /* ボタンスタイルの統一 */
+        .btn-primary {
+            background-color: var(--main-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--hover-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        /* Hero Section のレスポンシブ調整 */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 500px;
+                padding: 2rem 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .hero-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+                min-width: 180px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .hero-section {
+                min-height: 600px;
+                padding: 3rem 2rem;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 2rem;
+                font-weight: 700;
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 3rem;
+                font-weight: 400;
+            }
+            .hero-button {
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+                min-width: 220px;
+            }
+        }
+
+        /* タイトルのフォント調整 */
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .sub-title {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* カードコンポーネントの調整 */
+        .problem-card {
+            background: white;
+            border-left: 4px solid var(--main-color);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 8px 25px rgba(156, 34, 35, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* アイコンの色調整 */
+        .icon-primary {
+            color: var(--main-color);
+        }
+
+        .icon-secondary {
+            color: var(--text-secondary);
+        }
+
+        /* フッターの調整 */
+        .footer-bg {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        /* Hero Section レスポンシブ背景画像調整 */
+        .hero-section {
+            min-height: 70vh;
+        }
+        
+        .hero-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+        }
+
+        /* デスクトップ用の背景画像位置調整 */
+        @media (min-width: 769px) {
+            .hero-bg {
+                object-position: center right;
+            }
+        }
+
+        /* スマホ・タブレット用の背景画像位置調整 */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 60vh;
+            }
+            
+            .hero-bg {
+                object-position: 70% center; /* 人物がより見えるように調整 */
+                transform: scale(1.1); /* 少し拡大して人物を大きく表示 */
+                transform-origin: 70% center;
+            }
+            
+            /* スマホでのテキストエリアの調整 */
+            .hero-content {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 0.5rem;
+                padding: 1.5rem;
+                backdrop-filter: blur(2px);
+            }
+            
+            .hero-subtitle {
+                background: rgba(255, 255, 255, 0.95) !important;
+            }
+        }
+
+        /* 超小型スマホ用 */
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 50vh;
+            }
+            
+            .hero-bg {
+                object-position: 75% center;
+                transform: scale(1.2);
+                transform-origin: 75% center;
+            }
+        }
+}
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-sm border-b">
+    <header class="section-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-gray-900">ハイブリッド経営サポート</h1>
+                    <h1 class="text-2xl font-bold" style="color: var(--main-color);">ハイブリッド経営サポート</h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="https://hksllc.co.jp/" class="text-gray-600 hover:text-blue-600 transition-colors">
+                    <a href="https://hksllc.co.jp/" class="text-gray-600 hover:text-red-600 transition-colors">
                         <i class="fas fa-home mr-2"></i>ホーム
                     </a>
-                    <a href="https://hksllc.co.jp/inquiry/" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="https://forms.gle/e9Y42HUgQPp9tn878" class="btn-primary">
                         お問い合わせ
                     </a>
                 </div>
@@ -89,73 +309,69 @@
         </div>
     </header>
 
-<!-- Hero Section -->
-<section class="relative h-[500px] flex items-center justify-center text-white" style="min-height:400px;">
-  <img src="https://github.com/patr1111/kakushin/blob/main/32909671_l.jpg?raw=true" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
-  <div class="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-blue-400/40 z-10"></div>
-  <div class="relative z-20 w-full text-center px-4">
-<h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">
-  新規事業の成功確率を<br>
-  <span class="text-yellow-300 text-shadow">劇的に向上させる</span>
-</h1>
-<p class="text-xl md:text-2xl mb-8 opacity-90 text-shadow">
-  経営革新計画策定支援サービス
-</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#consultation" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-        <i class="fas fa-comments mr-2"></i>無料相談を申し込む
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero-section relative flex items-center justify-center text-white">
+        <img src="cover_419971563.jpeg" alt="Hero Background" class="hero-bg absolute inset-0 w-full h-full object-cover z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-800/40 z-10"></div>
+        <div class="relative z-20 w-full px-4 max-w-7xl mx-auto">
+            <div class="hero-content w-full md:w-1/2 text-left">
+                <h1 class="hero-title font-bold text-shadow mb-4">
+                    経営革新計画サポートplus
+                </h1>
+                <p class="hero-subtitle opacity-90 text-shadow" style="color: #2c5282; background: rgba(255, 255, 255, 0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: inline-block;">
+                    経営革新計画策定支援サービス
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Problem Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 section-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">こんなお悩みはありませんか？</h2>
-                <p class="text-lg text-gray-600">多くの中小企業が抱える新規事業への課題</p>
+                <h2 class="text-3xl font-bold mb-4">こんなお悩みはありませんか？</h2>
+                <p class="text-lg sub-title">多くの中小企業が抱える新規事業への課題</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-exclamation-triangle text-red-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">新規事業への取り組み方がわからない</h3>
+                        <i class="fas fa-exclamation-triangle icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">新規事業への取り組み方がわからない</h3>
                     </div>
                     <p class="text-gray-700">成長意欲はあるが、具体的にどう進めればよいかわからず足踏みしている</p>
                 </div>
-                <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-chart-line text-orange-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">事業計画の成功確率を上げたい</h3>
+                        <i class="fas fa-chart-line icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">事業計画の成功確率を上げたい</h3>
                     </div>
                     <p class="text-gray-700">新規事業の失敗リスクを抑え、成功の可能性を高める計画を立てたい</p>
                 </div>
-                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-money-bill-wave text-yellow-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">補助金の加点効果を活用したい</h3>
+                        <i class="fas fa-money-bill-wave icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">補助金の加点効果を活用したい</h3>
                     </div>
                     <p class="text-gray-700">各種補助金申請で有利になる認定を取得し、資金調達を有利に進めたい</p>
                 </div>
-                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-users text-green-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">専門家のサポートが欲しい</h3>
+                        <i class="fas fa-users icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">専門家のサポートが欲しい</h3>
                     </div>
                     <p class="text-gray-700">経営革新計画の策定から実行まで、専門家に伴走してもらいたい</p>
                 </div>
-                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-clock text-blue-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">効率的に計画を作成したい</h3>
+                        <i class="fas fa-clock icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">効率的に計画を作成したい</h3>
                     </div>
                     <p class="text-gray-700">忙しい中でも効率よく、高品質な計画を作成したい</p>
                 </div>
-                <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-400">
+                <div class="problem-card p-6 rounded-lg border-l-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-target text-purple-500 text-2xl mr-3"></i>
-                        <h3 class="text-lg font-semibold text-gray-900">計画の実行まで確実にしたい</h3>
+                        <i class="fas fa-target icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">計画の実行まで確実にしたい</h3>
                     </div>
                     <p class="text-gray-700">計画を作るだけでなく、実行フェーズまでサポートしてほしい</p>
                 </div>
@@ -164,11 +380,11 @@
     </section>
 
     <!-- Solution Section -->
-    <section id="service-details" class="py-16 bg-gray-50">
+    <section id="service-details" class="py-16 section-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">事業計画策定と実行を伴走サポートします</h2>
-                <p class="text-lg text-gray-600">経営コンサルタントによる完全サポートで、新規事業の成功確率を向上させます</p>
+                <h2 class="text-3xl font-bold mb-4">事業計画策定と実行を伴走サポートします</h2>
+                <p class="text-lg sub-title">経営コンサルタントによる完全サポートで、新規事業の成功確率を向上させます</p>
             </div>
             
             <!-- Service Features -->
@@ -177,21 +393,21 @@
                     <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">専門家による事業計画策定支援</h3>
+                    <h3 class="text-xl font-semibold mb-3">専門家による事業計画策定支援</h3>
                     <p class="text-gray-600">経験豊富な中小企業診断士が、事業が成功するよう計画策定をサポートします。</p>
                 </div>
                 <div class="text-center">
                     <div class="feature-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">伴走による実行支援</h3>
+                    <h3 class="text-xl font-semibold mb-3">伴走による実行支援</h3>
                     <p class="text-gray-600">計画を元にクライアントと一緒になって事業を軌道に乗せる支援をいたします。</p>
                 </div>
                 <div class="text-center">
                     <div class="feature-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">経営革新計画認定取得まで完全フォロー</h3>
+                    <h3 class="text-xl font-semibold mb-3">経営革新計画認定取得まで完全フォロー</h3>
                     <p class="text-gray-600">経営革新計画の認定取得まで、書類作成から提出まで全てをサポート。補助金加点効果も期待できます。</p>
                 </div>
             </div>
@@ -199,31 +415,31 @@
     <div class="section-divider"></div>
 
     <!-- セクション3: 経営革新計画とは（新規追加） -->
-    <section class="py-16 bg-white">
+    <section class="py-16 section-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                <i class="fas fa-info-circle text-blue-600 mr-3"></i>経営革新計画とは
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-info-circle icon-primary mr-3"></i>経営革新計画とは
             </h2>
             <div class="max-w-4xl mx-auto">
-                <div class="bg-blue-50 p-8 rounded-lg mb-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">国が推進する中小企業支援制度</h3>
+                <div class="p-8 rounded-lg mb-8" style="background: rgba(156, 34, 35, 0.05);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--main-color);">国が推進する中小企業支援制度</h3>
                     <p class="text-gray-700 text-lg mb-6">
                         経営革新計画は、「中小企業等経営強化法」に基づき、中小企業が新しい事業活動に取り組む際の計画を都道府県知事等が承認する制度です。
                     </p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-lg">
-                            <h4 class="font-bold text-gray-800 mb-3">
-                                <i class="fas fa-target text-blue-600 mr-2"></i>対象となる取り組み
+                            <h4 class="font-bold mb-3">
+                                <i class="fas fa-target icon-primary mr-2"></i>対象となる取り組み
                             </h4>
                             <ul class="text-sm text-gray-600 space-y-2">
-                                <li>• 新商品・新サービスの開発</li>
-                                <li>• 新しい生産・販売方式の導入</li>
-                                <li>• 新分野への進出</li>
-                                <li>• 既存事業の革新的改善</li>
+                                <li>• 新商品・新技術の開発</li>
+                                <li>• 新サービスの創出</li>
+                                <li>• 生産・販売手法の革新</li>
+                                <li>• 事業プロセスの変革</li>
                             </ul>
                         </div>
                         <div class="bg-white p-6 rounded-lg">
-                            <h4 class="font-bold text-gray-800 mb-3">
+                            <h4 class="font-bold mb-3">
                                 <i class="fas fa-chart-bar text-green-600 mr-2"></i>承認基準
                             </h4>
                             <ul class="text-sm text-gray-600 space-y-2">
@@ -237,7 +453,7 @@
                 </div>
                 <div class="text-center">
                     <p class="text-lg text-gray-700">
-                        <i class="fas fa-arrow-right text-blue-600 mr-2"></i>
+                        <i class="fas fa-arrow-right icon-primary mr-2"></i>
                         この制度を活用することで、「事業の成長」と「各種支援措置」の両方を獲得できます
                     </p>
                 </div>
@@ -248,54 +464,54 @@
     <div class="section-divider"></div>
 
     <!-- セクション4: 経営革新計画認定の3つのメリット -->
-    <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+    <section class="py-16 section-gray">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 class="text-3xl font-bold text-center mb-12">
                 <i class="fas fa-medal text-yellow-500 mr-3"></i>経営革新計画認定の3つのメリット
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg card-hover text-center">
-                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-percentage text-blue-600 text-3xl"></i>
+                <div class="bg-white p-8 rounded-lg shadow-lg service-card text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(156, 34, 35, 0.1);">
+                        <i class="fas fa-lightbulb icon-primary text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">メリット1</h3>
-                    <h4 class="text-lg font-semibold text-blue-600 mb-4">補助金申請時の加点効果</h4>
+                    <h3 class="text-xl font-bold mb-4">メリット1</h3>
+                    <h4 class="text-lg font-semibold mb-4" style="color: var(--main-color);">事業計画の明確化</h4>
                     <p class="text-gray-700 mb-6">
-                        ものづくり補助金、小規模事業者持続化補助金などの申請時に加点され、採択率が向上します。
+                        専門家と一緒に事業計画を策定することで、事業の方向性と実行手順が明確になります。
                     </p>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="text-sm text-blue-800 font-medium">
+                    <div class="p-4 rounded-lg" style="background: rgba(156, 34, 35, 0.05);">
+                        <p class="text-sm font-medium" style="color: var(--main-color);">
+                            事業の成功確率が大幅に向上
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg service-card text-center">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(34, 156, 34, 0.1);">
+                        <i class="fas fa-percentage text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">メリット2</h3>
+                    <h4 class="text-lg font-semibold text-green-600 mb-4">補助金申請時の加点効果</h4>
+                    <p class="text-gray-700 mb-6">
+                        ものづくり補助金などの申請時に加点され、採択率が向上します。
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-sm text-green-800 font-medium">
                             通常の申請より約10〜20%採択率がアップ
                         </p>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg card-hover text-center">
-                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-handshake text-green-600 text-3xl"></i>
+                <div class="bg-white p-8 rounded-lg shadow-lg service-card text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-purple-600 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">メリット2</h3>
-                    <h4 class="text-lg font-semibold text-green-600 mb-4">金融支援の充実</h4>
+                    <h3 class="text-xl font-bold mb-4">メリット3</h3>
+                    <h4 class="text-lg font-semibold text-purple-600 mb-4">金融支援の充実</h4>
                     <p class="text-gray-700 mb-6">
                         日本政策金融公庫の特別貸付制度や信用保証協会の特別保証制度を利用できます。
                     </p>
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <p class="text-sm text-green-800 font-medium">
-                            低金利での資金調達が可能
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg card-hover text-center">
-                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-star text-purple-600 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">メリット3</h3>
-                    <h4 class="text-lg font-semibold text-purple-600 mb-4">社会的信用の向上</h4>
-                    <p class="text-gray-700 mb-6">
-                        都道府県知事の承認を受けることで、社会的信用が向上し、取引先や金融機関からの評価が高まります。
-                    </p>
                     <div class="bg-purple-50 p-4 rounded-lg">
                         <p class="text-sm text-purple-800 font-medium">
-                            新規取引先開拓にも効果的
+                            低金利での資金調達が可能
                         </p>
                     </div>
                 </div>
@@ -306,42 +522,42 @@
     <div class="section-divider"></div>
 
     <!-- セクション5: 提供サービス内容 -->
-    <section class="py-16 bg-white">
+    <section class="py-16 section-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                <i class="fas fa-cogs text-blue-600 mr-3"></i>提供サービス内容
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-cogs icon-primary mr-3"></i>提供サービス内容
             </h2>
             <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-blue-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-6">
+                <div class="p-8 rounded-lg" style="background: rgba(156, 34, 35, 0.05);">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--main-color);">
                         <i class="fas fa-check-circle mr-3"></i>事業計画策定支援<br>（経営革新計画認定取得支援）
                     </h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <i class="fas fa-microphone-alt text-blue-600 mt-1 mr-3"></i>
+                            <i class="fas fa-microphone-alt icon-primary mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">ヒアリングを通じた現状分析</h4>
+                                <h4 class="font-bold">ヒアリングを通じた現状分析</h4>
                                 <p class="text-sm text-gray-600">お客様の事業現状を詳しく分析し、強みと課題を明確化</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-lightbulb text-blue-600 mt-1 mr-3"></i>
+                            <i class="fas fa-lightbulb icon-primary mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">計画策定の方針設計・ストーリーメイキング</h4>
+                                <h4 class="font-bold">計画策定の方針設計・ストーリーメイキング</h4>
                                 <p class="text-sm text-gray-600">説得力のある事業ストーリーを専門家と一緒に構築</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-edit text-blue-600 mt-1 mr-3"></i>
+                            <i class="fas fa-edit icon-primary mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">計画書のドラフト作成・フィードバック対応</h4>
+                                <h4 class="font-bold">計画書のドラフト作成・フィードバック対応</h4>
                                 <p class="text-sm text-gray-600">認定基準を満たす計画書の作成と継続的な改善</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-file-alt text-blue-600 mt-1 mr-3"></i>
+                            <i class="fas fa-file-alt icon-primary mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">提出書類の整備と認定までのフォロー</h4>
+                                <h4 class="font-bold">提出書類の整備と認定までのフォロー</h4>
                                 <p class="text-sm text-gray-600">必要書類の準備から認定取得まで完全サポート</p>
                             </div>
                         </div>
@@ -355,22 +571,22 @@
                         <div class="flex items-start">
                             <i class="fas fa-calendar-alt text-green-600 mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">実行スケジュール支援</h4>
+                                <h4 class="font-bold">実行スケジュール支援</h4>
                                 <p class="text-sm text-gray-600">販路開拓コーディネーターによる支援など具体的な実行支援</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-chart-line text-green-600 mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">KPI設定と進捗モニタリングの仕組みづくり</h4>
+                                <h4 class="font-bold">KPI設定と進捗モニタリングの仕組みづくり</h4>
                                 <p class="text-sm text-gray-600">成果を測定し、確実に目標達成へ導くシステム構築</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-users text-green-600 mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-bold text-gray-800">定期伴走支援（訪問またはオンライン）</h4>
-                                <p class="text-sm text-gray-600">月1〜2回の定期的な面談で継続的にサポート</p>
+                                <h4 class="font-bold">定期伴走支援（オンライン）</h4>
+                                <p class="text-sm text-gray-600">月1〜2回の定期的なオンライン面談で継続的にサポート</p>
                             </div>
                         </div>
                     </div>
@@ -382,37 +598,37 @@
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
-                            <i class="fas fa-cloud text-blue-600 mr-2"></i>クラウド経営顧問
+                        <h4 class="font-bold mb-2">
+                            <i class="fas fa-cloud icon-primary mr-2"></i>クラウド経営顧問
                         </h4>
                         <p class="text-sm text-gray-600">継続的な経営支援サービス</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
+                        <h4 class="font-bold mb-2">
                             <i class="fas fa-cog text-gray-600 mr-2"></i>技術コンサル
                         </h4>
                         <p class="text-sm text-gray-600">技術面での専門的な助言</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
+                        <h4 class="font-bold mb-2">
                             <i class="fas fa-money-check-alt text-green-600 mr-2"></i>補助金申請支援
                         </h4>
                         <p class="text-sm text-gray-600">各種補助金の申請サポート</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
+                        <h4 class="font-bold mb-2">
                             <i class="fas fa-paint-brush text-purple-600 mr-2"></i>ブランディング支援
                         </h4>
                         <p class="text-sm text-gray-600">商品開発・ブランド戦略</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
-                            <i class="fas fa-laptop text-blue-600 mr-2"></i>デジタル活用支援
+                        <h4 class="font-bold mb-2">
+                            <i class="fas fa-laptop icon-primary mr-2"></i>デジタル活用支援
                         </h4>
                         <p class="text-sm text-gray-600">HP作成・DX推進サポート</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-bold text-gray-800 mb-2">
+                        <h4 class="font-bold mb-2">
                             <i class="fas fa-handshake text-orange-600 mr-2"></i>スモールM&A戦略
                         </h4>
                         <p class="text-sm text-gray-600">事業承継・買収支援</p>
@@ -425,20 +641,20 @@
     <div class="section-divider"></div>
 
     <!-- セクション6: 料金プラン -->
-    <section class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+    <section class="py-16 section-gray">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 class="text-3xl font-bold text-center mb-12">
                 <i class="fas fa-yen-sign text-green-600 mr-3"></i>料金プラン
             </h2>
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                <div class="bg-white p-8 rounded-lg shadow-lg service-card">
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">事業計画策定支援プラン</h3>
+                        <h3 class="text-2xl font-bold mb-2">事業計画策定支援プラン</h3>
                         <p class="text-gray-600">経営革新計画の認定取得まで</p>
                     </div>
                     <div class="text-center mb-6">
-                        <div class="price-highlight text-4xl font-bold mb-2">150,000円</div>
-                        <p class="text-gray-600">（税込165,000円）</p>
+                        <div class="price-highlight text-4xl font-bold mb-2">250,000円</div>
+                        <p class="text-gray-600">（税込275,000円）</p>
                     </div>
                     <div class="space-y-3 mb-8">
                         <div class="flex items-center">
@@ -455,40 +671,36 @@
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">提出書類整備・認定フォロー</span>
+                            <span class="text-gray-700">提出書類整備・認定</span>
                         </div>
                     </div>
-                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                        <p class="text-sm text-blue-800">
+                    <div class="p-4 rounded-lg mb-6" style="background: rgba(156, 34, 35, 0.05);">
+                        <p class="text-sm" style="color: var(--main-color);">
                             <i class="fas fa-clock mr-2"></i>期間：2〜3か月
-                        </p>
-                        <p class="text-sm text-blue-800">
-                            <i class="fas fa-calendar mr-2"></i>頻度：月1〜2回（各90〜120分）
                         </p>
                     </div>
                     <div class="text-center">
-                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 inline-block">
+                        <a href="#contact" class="btn-primary inline-block">
                             このプランで申し込む
                         </a>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-2 border-purple-500 relative">
+                <div class="bg-white p-8 rounded-lg shadow-lg service-card border-2 relative" style="border-color: var(--main-color);">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-purple-500 text-white px-6 py-2 rounded-full text-sm font-bold">おすすめ</span>
+                        <span class="text-white px-6 py-2 rounded-full text-sm font-bold" style="background: var(--main-color);">おすすめ</span>
                     </div>
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">計画認定+実行支援パッケージ</h3>
+                        <h3 class="text-2xl font-bold mb-2">計画認定+実行支援パッケージ</h3>
                         <p class="text-gray-600">認定取得から実行まで完全サポート</p>
                     </div>
                     <div class="text-center mb-6">
-                        <div class="price-highlight text-4xl font-bold mb-2">300,000円</div>
-                        <p class="text-gray-600">（税込330,000円）</p>
-                        <p class="text-sm text-purple-600 font-medium">内容により変動あり</p>
+                        <div class="price-highlight text-4xl font-bold mb-2">100,000円/月～</div>
+                        <p class="text-gray-600">（税込110,000円～）</p>
                     </div>
                     <div class="space-y-3 mb-8">
                         <div class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">認定取得支援（全て含む）</span>
+                            <span class="text-gray-700">事業計画策定支援プランの内容</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-3"></i>
@@ -500,19 +712,19 @@
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">定期伴走支援（6か月）</span>
+                            <span class="text-gray-700">定期伴走支援（6か月・オンライン）</span>
                         </div>
                     </div>
-                    <div class="bg-purple-50 p-4 rounded-lg mb-6">
-                        <p class="text-sm text-purple-800">
+                    <div class="p-4 rounded-lg mb-6" style="background: rgba(156, 34, 35, 0.05);">
+                        <p class="text-sm" style="color: var(--main-color);">
                             <i class="fas fa-clock mr-2"></i>期間：認定取得後6か月
                         </p>
-                        <p class="text-sm text-purple-800">
-                            <i class="fas fa-calendar mr-2"></i>頻度：月1〜2回（訪問・オンライン）
+                        <p class="text-sm" style="color: var(--main-color);">
+                            <i class="fas fa-calendar mr-2"></i>頻度：月1〜2回（オンライン面談）
                         </p>
                     </div>
                     <div class="text-center">
-                        <a href="#contact" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 inline-block">
+                        <a href="#contact" class="btn-primary inline-block">
                             このプランで申し込む
                         </a>
                     </div>
@@ -524,20 +736,20 @@
     <div class="section-divider"></div>
 
     <!-- セクション7: サービスの流れ -->
-    <section class="py-16 bg-white">
+    <section class="py-16 section-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                <i class="fas fa-route text-blue-600 mr-3"></i>サービスの流れ
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-route icon-primary mr-3"></i>サービスの流れ
             </h2>
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-8">
                     <div class="flex items-center md:items-start">
-                        <div class="flex-shrink-0 w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">1</div>
+                        <div class="flex-shrink-0 w-16 h-16 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6" style="background: var(--main-color);">1</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">無料相談・お申し込み</h3>
+                            <h3 class="text-xl font-bold mb-2">無料相談・お申し込み</h3>
                             <p class="text-gray-700 mb-4">お客様の現状やご要望をお聞かせください。最適なプランをご提案いたします。</p>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <p class="text-sm text-blue-800">
+                            <div class="p-4 rounded-lg" style="background: rgba(156, 34, 35, 0.05);">
+                                <p class="text-sm" style="color: var(--main-color);">
                                     <i class="fas fa-clock mr-2"></i>所要時間：約60分（オンライン・訪問可）
                                 </p>
                             </div>
@@ -546,7 +758,7 @@
                     <div class="flex items-center md:items-start">
                         <div class="flex-shrink-0 w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">2</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">現状分析・ヒアリング</h3>
+                            <h3 class="text-xl font-bold mb-2">現状分析・ヒアリング</h3>
                             <p class="text-gray-700 mb-4">事業の現状、強み、課題を詳しく分析し、新規事業のアイデアを具体化していきます。</p>
                             <div class="bg-green-50 p-4 rounded-lg">
                                 <p class="text-sm text-green-800">
@@ -558,7 +770,7 @@
                     <div class="flex items-center md:items-start">
                         <div class="flex-shrink-0 w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">3</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">計画策定・ストーリー構築</h3>
+                            <h3 class="text-xl font-bold mb-2">計画策定・ストーリー構築</h3>
                             <p class="text-gray-700 mb-4">認定基準を満たし、説得力のある事業計画を専門家と一緒に作成します。</p>
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <p class="text-sm text-purple-800">
@@ -568,9 +780,9 @@
                         </div>
                     </div>
                     <div class="flex items-center md:items-start">
-                        <div class="flex-shrink-0 w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">4</div>
+                        <div class="flex-shrink-0 w-16 h-16 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6" style="background-color: #ea580c;">4</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">申請書類作成・提出</h3>
+                            <h3 class="text-xl font-bold mb-2">申請支援</h3>
                             <p class="text-gray-700 mb-4">必要な書類をすべて整備し、都道府県への申請手続きを行います。</p>
                             <div class="bg-orange-50 p-4 rounded-lg">
                                 <p class="text-sm text-orange-800">
@@ -580,13 +792,13 @@
                         </div>
                     </div>
                     <div class="flex items-center md:items-start">
-                        <div class="flex-shrink-0 w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">5</div>
+                        <div class="flex-shrink-0 w-16 h-16 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6" style="background: var(--hover-color);">5</div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">認定取得・実行支援</h3>
+                            <h3 class="text-xl font-bold mb-2">認定取得・実行支援</h3>
                             <p class="text-gray-700 mb-4">認定取得後、実際の事業実行をサポートします（パッケージプランの場合）。</p>
-                            <div class="bg-red-50 p-4 rounded-lg">
-                                <p class="text-sm text-red-800">
-                                    <i class="fas fa-rocket mr-2"></i>6か月間の継続的な伴走支援
+                            <div class="bg-yellow-50 p-3 rounded-lg mb-4">
+                                <p class="text-sm text-yellow-800">
+                                    <i class="fas fa-info-circle mr-2"></i>※伴走支援はオンライン面談にて実施いたします
                                 </p>
                             </div>
                         </div>
@@ -598,17 +810,17 @@
 
     <div class="section-divider"></div>
     <!-- Target Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 section-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">こんな方におすすめです</h2>
-                <p class="text-lg text-gray-600">経営者お一人企業でもお気軽にご相談ください！</p>
+                <h2 class="text-3xl font-bold mb-4">こんな方におすすめです</h2>
+                <p class="text-lg sub-title">経営者お一人企業でもお気軽にご相談ください！</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-user-tie text-blue-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-semibold text-gray-900">対象となる事業者</h3>
+                        <i class="fas fa-user-tie icon-primary text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">対象となる事業者</h3>
                     </div>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
@@ -632,23 +844,23 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-lightbulb text-yellow-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-semibold text-gray-900">こんな課題をお持ちの方</h3>
+                        <h3 class="text-xl font-semibold">こんな課題をお持ちの方</h3>
                     </div>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 mr-3 mt-1"></i>
+                            <i class="fas fa-arrow-right icon-primary mr-3 mt-1"></i>
                             <span>新規事業のアイデアはあるが計画化できない</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 mr-3 mt-1"></i>
+                            <i class="fas fa-arrow-right icon-primary mr-3 mt-1"></i>
                             <span>専門家の客観的な視点でアドバイスが欲しい</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 mr-3 mt-1"></i>
+                            <i class="fas fa-arrow-right icon-primary mr-3 mt-1"></i>
                             <span>補助金を活用して事業を拡大したい</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-600 mr-3 mt-1"></i>
+                            <i class="fas fa-arrow-right icon-primary mr-3 mt-1"></i>
                             <span>計画だけでなく実行まで支援してほしい</span>
                         </li>
                     </ul>
@@ -658,17 +870,17 @@
     </section>
 
     <!-- セクション9: 安心の実績と専門性 -->
-    <section class="py-16 bg-white">
+    <section class="py-16 section-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                <i class="fas fa-shield-alt text-blue-600 mr-3"></i>安心の実績と専門性
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-shield-alt icon-primary mr-3"></i>安心の実績と専門性
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="text-center">
-                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-blue-600 text-3xl"></i>
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(156, 34, 35, 0.1);">
+                        <i class="fas fa-users icon-primary text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">160名以上</h3>
+                    <h3 class="text-2xl font-bold mb-2" style="color: var(--main-color);">160名以上</h3>
                     <p class="text-gray-700">中小企業診断士の有資格者が在籍</p>
                 </div>
                 <div class="text-center">
@@ -698,55 +910,48 @@
 
     <div class="section-divider"></div>
     <!-- セクション10: FAQ -->
-    <section class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+    <section class="py-16 section-gray">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                <i class="fas fa-question-circle text-blue-600 mr-3"></i>よくあるご質問
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-question-circle icon-primary mr-3"></i>よくあるご質問
             </h2>
             <div class="max-w-4xl mx-auto space-y-6">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>経営革新計画の認定を受けるメリットは何ですか？
+                    <h3 class="font-bold mb-3">
+                        <i class="fas fa-q icon-primary mr-2"></i>経営革新計画の認定を受けるメリットは何ですか？
                     </h3>
                     <p class="text-gray-700 pl-8">
-                        補助金申請時の加点効果、金融支援の充実、社会的信用の向上など多くのメリットがあります。特に補助金の採択率向上は大きなメリットです。
+                        事業計画の明確化、補助金申請時の加点効果、金融支援の充実など多くのメリットがあります。特に事業の成功確率向上は大きなメリットです。
                     </p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>個人事業主でも対象になりますか？
+                    <h3 class="font-bold mb-3">
+                        <i class="fas fa-q icon-primary mr-2"></i>個人事業主でも対象になりますか？
                     </h3>
                     <p class="text-gray-700 pl-8">
                         はい、個人事業主の方も対象となります。経営者1人企業であっても、新規事業に取り組む意欲がある方であれば支援いたします。
                     </p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>認定までにどのくらいの期間がかかりますか？
+                    <h3 class="font-bold mb-3">
+                        <i class="fas fa-q icon-primary mr-2"></i>認定までにどのくらいの期間がかかりますか？
                     </h3>
                     <p class="text-gray-700 pl-8">
                         計画策定から認定取得まで通常2〜3か月程度です。お客様の事業内容や準備状況によって期間は変動する場合があります。
                     </p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>オンラインでのサポートは可能ですか？
+                    <h3 class="font-bold mb-3">
+                        <i class="fas fa-q icon-primary mr-2"></i>オンラインでのサポートは可能ですか？
                     </h3>
                     <p class="text-gray-700 pl-8">
-                        はい、オンラインでのサポートも可能です。むしろオンラインの方が頻度の高い面談が可能で、より密度の濃い支援をご提供できます。
+                        基本的に全てオンラインで対応しています。むしろオンラインの方が頻度の高い面談が可能で、より密度の濃い支援をご提供できます。 
                     </p>
                 </div>
+
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>認定が取れなかった場合はどうなりますか？
-                    </h3>
-                    <p class="text-gray-700 pl-8">
-                        認定基準を満たす計画を策定するため、これまで高い認定率を維持しています。万が一の場合は再申請のサポートもいたします。
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-gray-800 mb-3">
-                        <i class="fas fa-q text-blue-600 mr-2"></i>料金の支払い方法は？
+                    <h3 class="font-bold mb-3">
+                        <i class="fas fa-q icon-primary mr-2"></i>料金の支払い方法は？
                     </h3>
                     <p class="text-gray-700 pl-8">
                         銀行振込でお支払いいただけます。分割払いについてもご相談に応じますので、お気軽にお問い合わせください。
@@ -758,7 +963,7 @@
 
     <div class="section-divider"></div>
     <!-- CTA Section -->
-    <section id="consultation" class="py-16 gradient-bg text-white">
+    <section id="consultation" class="py-16 main-gradient text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-4">まずは無料相談からはじめませんか？</h2>
             <p class="text-lg mb-8 opacity-90">
@@ -766,62 +971,13 @@
                 お気軽にお問い合わせください。
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://docs.google.com/forms/d/1FBv0Z6aBvQY62YMvElAdfPMBvDSp-oxmovXOt2vYAno/viewform?edit_requested=true" 
-                   class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                    <i class="fas fa-calendar-check mr-2"></i>無料面談を申し込む
-                </a>
-                <a href="https://hksllc.co.jp/inquiry/" 
-                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                <a href="https://forms.gle/e9Y42HUgQPp9tn878" 
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white transition-colors inline-block" style="hover:color: var(--main-color);">
                     <i class="fas fa-envelope mr-2"></i>お問い合わせ
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">ハイブリッド経営サポート株式会社</h3>
-                    <p class="text-gray-400 mb-4">
-                        中小企業の経営課題解決を専門とする認定経営革新等支援機関です。
-                    </p>
-                    <div class="space-y-2 text-sm text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>東京都江東区永代二丁目23-10</p>
-                        <p><i class="fas fa-phone mr-2"></i>050-5536-8036</p>
-                        <p><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c75727a735c74776f70707f327f7332766c">[email&#160;protected]</a></p>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">サービス</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://hksllc.co.jp/crowdcomon/" class="hover:text-white transition-colors">クラウド経営顧問</a></li>
-                        <li><a href="https://hksllc.co.jp/hojokinkatsuyo/" class="hover:text-white transition-colors">補助金活用支援</a></li>
-                        <li><a href="https://hksllc.co.jp/business-planning/" class="hover:text-white transition-colors">実践！ビジプラン</a></li>
-                        <li><a href="https://hksllc.co.jp/eng-consulting/" class="hover:text-white transition-colors">技術コンサル</a></li>
-                        <li><a href="https://hksllc.co.jp/saisei/souki/" class="hover:text-white transition-colors">早期経営改善計画</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">お問い合わせ</h4>
-                    <div class="space-y-3">
-                        <a href="https://docs.google.com/forms/d/1FBv0Z6aBvQY62YMvElAdfPMBvDSp-oxmovXOt2vYAno/viewform?edit_requested=true" 
-                           class="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center">
-                            無料面談申し込み
-                        </a>
-                        <a href="https://hksllc.co.jp/inquiry/" 
-                           class="block border border-gray-600 text-gray-400 px-4 py-2 rounded hover:border-gray-400 hover:text-white transition-colors text-center">
-                            お問い合わせ
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 ハイブリッド経営サポート株式会社. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"95b5d494280483c1","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>

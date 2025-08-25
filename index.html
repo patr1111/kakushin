@@ -63,13 +63,58 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
+        /* カスタムテキストシャドウ */
+        .text-shadow {
+            text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 1.5px 4px rgba(0,0,0,0.18);
+        }
+        /* Hero Section のレスポンシブ調整 */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 500px;
+                padding: 2rem 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .hero-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+                min-width: 180px;
+            }
+        }
+        @media (min-width: 769px) {
+            .hero-section {
+                min-height: 600px;
+                padding: 3rem 2rem;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 3rem;
+            }
+            .hero-button {
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+                min-width: 220px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex flex-wrap justify-between items-center py-4">
                 <div class="flex items-center">
                     <h1 class="text-2xl font-bold text-gray-900">ハイブリッド経営サポート</h1>
                 </div>
@@ -85,23 +130,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                新規事業の成功確率を<br>
-                <span class="text-yellow-300">劇的に向上させる</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">
-                経営革新計画策定支援サービス
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#consultation" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-                    <i class="fas fa-comments mr-2"></i>無料相談を申し込む
-                </a>
-                            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero-section relative flex items-center justify-center text-white">
+  <img src="https://github.com/patr1111/kakushin/blob/color-adjusted/AdobeStock_419971563_Preview.jpeg?raw=true" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10"></div>
+  <div class="relative z-20 w-full text-center px-4 max-w-4xl mx-auto">
+    <h1 class="hero-title font-bold text-shadow">
+      経営革新計画サポートplus
+    </h1>
+    <p class="hero-subtitle opacity-90 text-shadow max-w-2xl mx-auto">
+      経営革新計画策定支援サービス
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#consultation" class="hero-button cta-button text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
+        <i class="fas fa-comments mr-2"></i>無料相談を申し込む
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- Problem Section -->
     <section class="py-16 bg-white">
